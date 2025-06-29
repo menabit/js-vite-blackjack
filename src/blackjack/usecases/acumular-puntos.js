@@ -3,10 +3,10 @@ import valorCarta  from './valor-carta';
 const puntosHTML = document.querySelectorAll('small');
 
 // Turno: 0 = primer jugador y el último será la computadora
-export const acumularPuntos = ( carta, turno, puntosJugadores ) => {
+export const acumularPuntos = ( carta, turno, puntosJugadores ) => {   
 
     if ( !puntosJugadores ) throw new Error('puntosJugadores es necesario');
-    if ( !turno ) throw new Error('turno es necesario');
+    if ( turno === undefined || turno === null) throw new Error('turno es necesario');
 
     puntosJugadores[turno] = puntosJugadores[turno] + valorCarta( carta );       
     puntosHTML[turno].innerText = puntosJugadores[turno];
